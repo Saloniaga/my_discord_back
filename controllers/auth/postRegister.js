@@ -19,7 +19,19 @@ const postRegister = async (req, res) => {
       mail: mail.toLowerCase(),
       password: encryptedPassword,
     });
-    const token = "JWT_TOKEN";
+    //   const token = "JWT_TOKEN";
+
+    const token = jwt.sign(
+      {
+        userId: user._id,
+        mail,
+      },
+      process.env.TOKEN_KEY,
+      {
+        expiresIn: "24h",
+      }
+    );
+
     res.status(201).json({
       userDetails: {
         mail: user.mail,
