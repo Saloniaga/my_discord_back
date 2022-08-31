@@ -1,14 +1,14 @@
 const connectedUsers = new Map();
 
-// let io = null;
+let io = null;
 
-// const setSocketServerInstance = (ioInstance) => {
-//   io = ioInstance;
-// };
+const setSocketServerInstance = (ioInstance) => {
+  io = ioInstance;
+};
 
-// const getSocketServerInstance = () => {
-//   return io;
-// };
+const getSocketServerInstance = () => {
+  return io;
+};
 
 const addNewConnectedUser = ({ socketId, userId }) => {
   connectedUsers.set(socketId, { userId });
@@ -24,17 +24,17 @@ const removeConnectedUser = (socketId) => {
   }
 };
 
-// const getActiveConnections = (userId) => {
-//   const activeConnections = [];
+const getActiveConnections = (userId) => {
+  const activeConnections = [];
 
-//   connectedUsers.forEach(function (value, key) {
-//     if (value.userId === userId) {
-//       activeConnections.push(key);
-//     }
-//   });
+  connectedUsers.forEach(function (value, key) {
+    if (value.userId === userId) {
+      activeConnections.push(key);
+    }
+  });
 
-//   return activeConnections;
-// };
+  return activeConnections;
+};
 
 // const getOnlineUsers = () => {
 //   const onlineUsers = [];
@@ -49,8 +49,8 @@ const removeConnectedUser = (socketId) => {
 module.exports = {
   addNewConnectedUser,
   removeConnectedUser,
-  //   getActiveConnections,
-  //   setSocketServerInstance,
-  //   getSocketServerInstance,
+  getActiveConnections,
+  setSocketServerInstance,
+  getSocketServerInstance,
   //   getOnlineUsers,
 };
