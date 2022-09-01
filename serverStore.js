@@ -36,15 +36,15 @@ const getActiveConnections = (userId) => {
   return activeConnections;
 };
 
-// const getOnlineUsers = () => {
-//   const onlineUsers = [];
+const getOnlineUsers = () => {
+  const onlineUsers = [];
 
-//   connectedUsers.forEach((value, key) => {
-//     onlineUsers.push({ socketId: key, userId: value.userId });
-//   });
+  connectedUsers.forEach((value, key) => {
+    onlineUsers.push({ socketId: key, userId: value.userId });
+  });
 
-//   return onlineUsers;
-// };
+  return onlineUsers;
+};
 
 module.exports = {
   addNewConnectedUser,
@@ -52,5 +52,5 @@ module.exports = {
   getActiveConnections,
   setSocketServerInstance,
   getSocketServerInstance,
-  //   getOnlineUsers,
+  getOnlineUsers,
 };
