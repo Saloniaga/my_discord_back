@@ -43,7 +43,7 @@ Start the server
 
 The Login & Register Page.
 
-![homepage](assets/homepage.png)
+![homepage](assets/login.png)
 
 The homepage has a dashboard with the list of your friends and the pending friends invitation.
 
